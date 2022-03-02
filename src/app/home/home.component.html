@@ -1,0 +1,64 @@
+<div class="container">
+  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>DATA COPIED TO CLICKBOARD</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div class="heading"><h3>REFINISH CUSTOMER SYSTEM DATA</h3></div>
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="customers" id="label">CUSTOMER</label>
+            <select id="customers" [(ngModel)]="selectedCustomer" (change)="onCustomerChange($event)">
+              <option *ngFor=" let customer of customerData" [ngValue]="customer">{{customer.label|uppercase}}</option> 
+            </select>
+          </div>
+          <div class="col-sm-6">
+            <button type="button"  class="btn btn-secondary" (click)="openAddDialog()" >
+                ADD
+            </button>
+            <button type="button"  class="btn btn-secondary" (click)="onClickClipboard()">COPY TO CLIPBOARD</button>
+          </div>
+        </div>
+      </div>
+      <table class="table table-hover table-fixed">
+        <thead>
+          <tr>
+            <th style="width:20%">DT</th>
+            <th style="width:20%">STATUS</th>
+            <th style="width:60%">DT DESCRIPTION</th>
+            <th style="width:20%">ACTIONS</th> 
+          </tr>
+        </thead>
+        <tbody id="table_data" >
+             <tr *ngFor="let item of result">
+                <td style="width:20%">{{item.DvlpmntTypIdNmbr}}</td>
+                <td style="width:20%">{{item.ExtrctSttsFlg}}</td>
+                <td style="width:60%">{{item.DvlpmntTypDscrptn}}</td>
+                <td style="width:20%" id="icon"><i (click)="openDeleteDialog(item)" class="fa fa-trash"  style="font-size:14px;  color: #605f5f;"></i></td>
+              </tr>
+        </tbody>
+      </table>
+      <div class="footer">
+        <div class="col-sm-6">
+          <label id="status">Status:</label>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <span>M - Modified</span>
+          </div>
+          <div class="col-sm-3">
+            <span>N - New</span>
+          </div>
+          <div class="col-sm-3">
+            <span>V - Validated</span>
+          </div>
+          <div class="col-sm-3">
+            <button type="submit" [disabled]="changed" (click)="updateData()" id="saveBtn" class="btn btn-secondary">SAVE</button>
+          </div>
+        </div>
+      </div>  
+   </div>
+  
+  </div>
+

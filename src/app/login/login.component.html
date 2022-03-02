@@ -1,0 +1,12 @@
+  <form>
+    <h3>Login Here</h3>
+    <div class="error"> <p>{{error}}</p></div>
+    <label for="username" class="form-label">Username</label>
+    <input  type="text" #Username="ngModel" [(ngModel)]=" userData.username" class="form-control" placeholder="Username" id="username" name="username" ngModel required>
+    <div><p *ngIf="Username.invalid && Username.touched">THE USER NAME FIELD IS REQUIRED.</p></div>
+    <label for="password" class="form-label">Password</label>
+    <input   type="password" #Password="ngModel" [(ngModel)]=" userData.password" class="form-control" placeholder="Password" id="password" name="password" ngModel required>
+    <div><p *ngIf="Password.invalid && Password.touched">THE PASSWORD FIELD IS REQUIRED.</p></div>
+    <button (click)="loginUser()" type="submit">Log In</button>
+  </form>
+

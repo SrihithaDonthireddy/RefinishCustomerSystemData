@@ -1,0 +1,9 @@
+
+<h6 mat-dialog-title>CONFIRMATION</h6>
+<mat-dialog-content>
+    <p>ARE YOU SURE WANT TO DELETE?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button  class="btn btn-secondary" [mat-dialog-close]="false" (click)="close()">CANCEL</button>
+    <button mat-button  class="btn btn-secondary" [mat-dialog-close]="true">OK </button>
+</mat-dialog-actions>

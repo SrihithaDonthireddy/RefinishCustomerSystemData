@@ -1,0 +1,22 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body { height: 100%; }
+body { margin: 0}
+
+body {
+    color: #242830;
+    background: #f5f5f5;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 12px;
+}
+
+
+.modal .btn-close {
+    background: transparent url(http://axcs-dev.axaltacs.net/GK/Images/model-cancel.png) center/1.5em auto no-repeat;
+    opacity: .75;
+}
+
+.modal .btn-close:hover {
+    opacity: 1;
+}
+

@@ -1,0 +1,43 @@
+<div class="container">
+    <h6 mat-dialog-title>NEW REFINISH CUSTOMER SYSTEM EXTRACTS</h6>
+
+    <form [formGroup]="addForm" (ngSubmit)="addData()">
+        <mat-dialog-content>
+            <div class="row p-2">
+                <div class="col-6">
+                    <label for="dt" class="form-label">DT</label>
+                    <input type="text" class="form-control" id="dt" (blur)="onBlur()" formControlName="dt">
+                </div>
+                <div class="col-6">
+                    <label for="status" class="form-label">STATUS</label>
+                    <select class="form-select" name="status" id="status" aria-label="Default select example"
+                        formControlName="status" (change)="onBlur()">
+                        <option selected></option>
+                        <option value="M">MODIFIED</option>
+                        <option value="N">NEW</option>
+                        <option value="V">VALIDATED</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-12">
+                    <label for="description" class="form-label">DT DESCRIPTION</label>
+                    <input type="text" name="description" class="form-control" id="description"
+                        formControlName="description" readonly="true">
+                </div>
+            </div>
+        </mat-dialog-content>
+        <div class="row p-1">
+            <div class="col-6">
+                <p class="errorMsg" *ngFor = "let error of validationErrors">{{error}}</p>
+            </div>
+            <div class="col-6">
+                <mat-dialog-actions>
+                    <button mat-button class="btn btn-secondary" (click)="close()">CANCEL</button>
+                    <button mat-button class="btn btn-secondary">OK</button>
+                </mat-dialog-actions>
+            </div>
+        </div>
+
+    </form>
+</div>

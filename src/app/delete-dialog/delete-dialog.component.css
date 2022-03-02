@@ -1,0 +1,31 @@
+.mat-dialog-title{
+    color: #ffffff;
+    background-color: #333;
+    margin-top: -25px;
+    display: block;
+    margin-left: -34px;
+    margin-right: -24px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.mat-dialog-content {
+    display: block;
+    margin-top: -10px;
+    margin-left: -35px;
+    margin-bottom: -10px;
+    padding-top: 2px;
+}
+
+
+.btn{
+    margin-left: 20px;
+    background-color:#f89720;
+    border-color: #f89720;
+    font-size: 12px;
+    box-shadow: #f89720;
+}
+
+.mat-dialog-actions{
+    float: right; 
+   
+}
